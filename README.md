@@ -25,4 +25,6 @@ Overview of the game mechanics and deep-q-learning
    
 Run
   - specify whether to load the existing neural network or not, as well as the game iteration count
-  ex) python3 main.py load 500
+  - ex) python3 main.py load 500
+  - reached max snake length of 20 after about 10,000 games of training
+  - training still in progress
