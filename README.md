@@ -13,15 +13,15 @@ Neural Network
   - predicts the next move that maximizes the reward 
   
 Overview of the game mechanics and deep-q-learning
- <during each move in a game>
+ - (during each move in a game)
   - the neural network evaluates the state and predicts the best possible move
   - the snake receives the following points as rewards: food eaten = 1,
                                                         moved closer to the food = 0.05,
                                                         moved further away from the food = -0.05,
                                                         dead = -1                                                     
   - the state, the reward the snake received, the next outcome state, and whether the snake died or not gets recorded in memory
-  - the network is trained on batch of size 64 randomly chosed from the memory 
- <above process repeats until the snake dies>
+  - the network is trained on batch of size 64 randomly chosed data from the memory 
+ - (above process repeats until the snake dies)
    
 Run
   - specify whether to load the existing neural network or not, as well as the game iteration count
