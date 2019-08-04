@@ -54,6 +54,7 @@ def main(load, iterations):
 	elif load.lower() == "new":
 		pass
 	else:
+		print("unknown command: ", load)
 		return
 
 	scores = []
