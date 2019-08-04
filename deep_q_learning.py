@@ -5,10 +5,6 @@ import numpy as np
 from collections import deque
 import random
 
-'''
-import os
-os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
-'''
 
 def build_dqn(lr, n_actions, input_dims):
     model = Sequential([

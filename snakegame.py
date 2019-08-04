@@ -98,49 +98,6 @@ class SnakeGame:
 		else:
 			return -0.05
 
-	def get_food_position(self):
-		left = front = right = 0
-
-		if self.snake.direction == 0:
-			left = self.food.loc[1] > self.snake.y
-			front = self.food.loc[0] < self.snake.x
-			right = self.food.loc[1] < self.snake.y
-		elif self.snake.direction == 1:
-			left = self.food.loc[1] < self.snake.y
-			front = self.food.loc[0] > self.snake.x
-			right = self.food.loc[1] > self.snake.y
-		elif self.snake.direction == 2:
-			left = self.food.loc[0] < self.snake.x
-			front = self.food.loc[1] < self.snake.y
-			right = self.food.loc[0] > self.snake.x
-		else:
-			left = self.food.loc[0] > self.snake.x
-			front = self.food.loc[1] > self.snake.y
-			right= self.food.loc[0] < self.snake.x
-
-		return left, front, right
-
-	def get_danger(self):
-		left = front = right = 0
-
-		if self.snake.direction == 0:
-			left = self.snake.y == self.height - 1 or [self.snake.x, self.snake.y + 1] in self.snake.body
-			front = self.snake.x == 0 or [self.snake.x - 1, self.snake.y] in self.snake.body
-			right = self.snake.y == 0 or [self.snake.x, self.snake.y - 1] in self.snake.body
-		elif self.snake.direction == 1:
-			left = self.snake.y == 0 or [self.snake.x, self.snake.y - 1] in self.snake.body
-			front = self.snake.x == self.width - 1 or [self.snake.x + 1, self.snake.y] in self.snake.body
-			right = self.snake.y == self.height - 1 or [self.snake.x, self.snake.y + 1] in self.snake.body
-		elif self.snake.direction == 2:
-			left = self.snake.x == 0 or [self.snake.x - 1, self.snake.y] in self.snake.body
-			front = self.snake.y == 0 or [self.snake.x, self.snake.y - 1] in self.snake.body
-			right = self.snake.x == self.width - 1 or [self.snake.x + 1, self.snake.y] in self.snake.body
-		else:
-			left = self.snake.x == self.width - 1 or [self.snake.x + 1, self.snake.y] in self.snake.body
-			front = self.snake.y == self.height - 1 or [self.snake.x, self.snake.y + 1] in self.snake.body
-			right = self.snake.x == 0 or [self.snake.x - 1, self.snake.y] in self.snake.body
-
-		return left, front, right
 
 
 

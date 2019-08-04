@@ -38,19 +38,7 @@ def render(screen, game):
 	state = pygame.surfarray.array3d(pygame.transform.scale(screen, (30, 30)))
 
 	return state
-'''
-def get_state(game):
-	state = np.zeros(10)
 
-	state[0] = game.snake.x / game.width
-	state[1] = game.snake.y / game.height 
-	state[2] = game.snake.direction / 3
-	state[3] = len(game.snake.body) / game.width * game.height
-	state[4:7] = game.get_food_position()
-	state[7: ] = game.get_danger()
-
-	return state
-'''
 
 def main(load, iterations):
 	pygame.init()
@@ -70,7 +58,6 @@ def main(load, iterations):
 
 	scores = []
 
-	#image stack
 
 	for episode in range(int(iterations)):
 		game.reset()
@@ -84,8 +71,6 @@ def main(load, iterations):
 			action = agent.choose_action(state)
 			reward, finished = game.take_action(action)
 			new_state = render(screen, game)
-			#new_state = stack_input(new_render_state, image_counter)
-			#new_state = np.array(new_render_state[:,:,1], dtype = np.uint8)[:,:,np.newaxis]
 			score += reward
 			agent.remember(transition = (state, action, reward, new_state, finished))
 			state = new_state
