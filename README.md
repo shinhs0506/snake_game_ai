@@ -22,3 +22,7 @@ Overview of the game mechanics and deep-q-learning
   - the state, the reward the snake received, the next outcome state, and whether the snake died or not gets recorded in memory
   - the network is trained on batch of size 64 randomly chosed from the memory 
  <above process repeats until the snake dies>
+   
+Run
+  - specify whether to load the existing neural network or not, as well as the game iteration count
+  ex) python3 main.py load 500
