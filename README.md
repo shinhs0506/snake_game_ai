@@ -1,4 +1,7 @@
 # snake_game_ai
+
+![](snakgameupload.gif)
+
 snake game ai using Keras implementation of deep-q-learning
 
 Game
